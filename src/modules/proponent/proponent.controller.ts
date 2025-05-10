@@ -8,12 +8,12 @@ export class ProponentController {
     constructor(private readonly proponentService: ProponentService) {}
 
     @Get()
-    findAll(): Proponent[] {
-        return this.proponentService.findAll();       
+    async getAllProponents(): Promise<Proponent[]> {
+        return await this.proponentService.getAllProponents();       
     }
 
     @Post()
-    create(@Body() proponent: Proponent): Proponent {
-        return this.proponentService.create(proponent);
+    async addProponent(@Body() proponent: Proponent): Promise<Proponent> {
+        return await this.proponentService.addProponent(proponent);
     }
 }

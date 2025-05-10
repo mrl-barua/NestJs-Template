@@ -1,14 +1,14 @@
 export class Proponent {
     id: number;
-    proponentId: string;
-    departmentId?: number;
-    officeId?: number;
+    proponentId: string | null;
+    departmentId?: number | null;
+    officeId?: number | null;
     proponentType: 'Insider' | 'Outsider';
     proponentStatus: 'Pending' | 'Approved' | 'Rejected';
-    fullName: string;
-    email: string;
+    fullName: string | null;
+    email: string | null;
     password: string;
-    isDeleted: number;
+    isDeleted: Boolean ;
     createdAt?: Date;
   }
   

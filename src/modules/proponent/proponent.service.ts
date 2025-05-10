@@ -1,17 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import { Proponent } from './entities/proponent.entity'
+import { PrismaService } from '../../prisma/prisma.service';
 
 
 @Injectable()
 export class ProponentService {
-    private proponents: Proponent[] = [];
+    constructor(private readonly  prisma: PrismaService) {}
 
-    findAll(): Proponent[] {
-        return this.proponents;
-    }
+    async getAllProponents() {
+        return this.prisma.proponent.findMany();
+      }
 
-    create(proponent: Proponent): Proponent {
-        this.proponents.push(proponent);
-        return proponent;
-    }
+    async addProponent(data: any) {
+        return this.prisma.proponent.create({ data });
+      }
 }
