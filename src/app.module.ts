@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-
 import { ProponentModule } from './modules/proponent/proponent.module';
 import { ProponentController } from './modules/proponent/proponent.controller';
 import { ProponentService } from './modules/proponent/proponent.service';
